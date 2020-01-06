@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Condensed&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
+        <link rel="stylesheet" href="{{url_for('static',
+            filename='css/proto.css')}}">
+        <!-- Compiled and minified JavaScript -->
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <title>Base Projekto</title>
+        <link rel="shortcut icon" href="{{ url_for('static',
+            filename='favicon.ico') }}">
+    </head>
+    <body>
+        <div id="master">
+            <header id="header">
+                <a id="toggler1" class="wave-effect wave-light btn"><i
+                        class="material-icons left">visibility</i>Show</a>
+                <a id="toggler2" class="wave-effect wave-light btn"><i
+                        class="material-icons left">visibility_off</i>Hide</a>
+            </header>
+            <aside id="left-form">
+                <h2>Iniciativa de Projeto</h2>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="input-field s12">
+                            <input id="_titulo" type="text">
+                            <label for="_titulo">Título</label>
+                        </div>
+                        <div class="input-field s12">
+                            <input class="text-lighten5" id="objetivo_geral" type="text">
+                            <label for="objetivo_geral">Objetivo Geral</label>
+                        </div>
+                        <div class="input-field s12">
+                            <input id="publico_alvo" type="text">
+                            <label for="publico_alvo">Público Alvo</label>
+                        </div>
+                        <div class="input-field s12">
+                            <input id="meta" type="text">
+                            <label for="meta">Meta</label>
+                        </div>
+                        <div class="input-field s12">
+                            <textarea class="materialize-textarea"
+                                id="justificativa" type="text">
+                            </textarea>
+                            <label for="justificativa">Justificativa</label>
+                        </div>
+                        <a class="wave-effect wave-light btn"><i
+                                class="material-icons left">send</i>Enviar</a>
+                    </form>
+                </div>
+            </aside>
+            <main id="right-list">
+                <table>
+                    <th>
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                        </tr>
+
+                    </th>
+                    <tbody>
+                        {% for name in names %}
+                        <tr>
+                            <td>
+                                {{ name }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </main>
+            <footer id="down-footer">
+
+            </footer>
+
+        </div>
+        <script src="{{url_for('static',filename='js/proto.js')}}"></script>
+    </body>
+</html>
